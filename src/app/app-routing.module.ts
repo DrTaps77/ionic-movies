@@ -1,15 +1,24 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'films',
     pathMatch: 'full'
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+    path: 'films', 
+    loadChildren: () => import('./pages/films/films.module').then( m => m.FilmsPageModule)
+  },
+  {
+    path: 'series',
+    loadChildren: () => import('./pages/series/series.module').then( m => m.SeriesPageModule)
+  },
+  {
+    path: 'acteurs',
+    loadChildren: () => import('./pages/acteurs/acteurs.module').then( m => m.ActeursPageModule)
   }
 ];
 
